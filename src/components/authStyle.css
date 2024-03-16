@@ -1,0 +1,77 @@
+.signup-container,
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.signup-content,
+.login-content {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+}
+
+.signup-content h1,
+.login-content h1 {
+    margin: 0;
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.signup-content form div,
+.login-content form div {
+    margin-bottom: 20px;
+}
+
+.signup-content label,
+.login-content label {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.signup-content input,
+.login-content input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.signup-content input:focus,
+.login-content input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.signup-content button,
+.login-content button {
+    width: 100%;
+    padding: 14px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 18px; 
+}
+
+.signup-content button:hover,
+.login-content button:hover {
+    background-color: #0056b3;
+}
+
+.signup-content button:last-child,
+.login-content button:last-child {
+    margin-top: 10px; 
+}

@@ -1,0 +1,67 @@
+.navbar {
+    background-color: rgb(0, 0, 0);
+    border-bottom: 2px solid white;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 10px;
+}
+
+.navbar a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    background-color: white;
+    padding: 7px 18px;
+    margin-right: 50px;
+    font-size: 18px;
+}
+
+.modal-content h2 {
+    margin-top: 5px;
+    color: black;
+}
+
+.modal-content p {
+    font-size: 18px;
+}
+
+.modal-content button {
+    font-size: 16px;
+    padding: 5px 15px;
+}
+.highscore-container {
+    width: 30%;
+    margin: 0 auto;
+    border: 3px solid #1075c7;
+    color: white;
+    padding: 20px;
+}
+
+.highscore-container h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+    color: black;
+}
+
+table tbody tr:hover {
+    background-color: #1075c7;
+}

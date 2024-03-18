@@ -19,7 +19,7 @@ function Signup() {
     e.preventDefault();
     dispatch(setLoading(true)); 
     try {
-      const response = await axios.post("https://exploding-kitten-1-fs5m.onrender.com/users/signup", {
+      const response = await axios.post("https://embarrassed-bee-belt.cyclic.app/users/signup", {
         email,
         password,
       });

@@ -13,7 +13,7 @@ export const fetchHighscore = createAsyncThunk(
   async (_, { getState }) => {
     try {
       const { user } = getState().user;
-      const response = await axios.get("https://exploding-kitten-1-fs5m.onrender.com/users/highest", {
+      const response = await axios.get("https://embarrassed-bee-belt.cyclic.app/users/highest", {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -31,7 +31,7 @@ export const updateScore = createAsyncThunk(
     try {
       const { user } = getState().user;
       const response = await axios.get(
-        "https://exploding-kitten-1-fs5m.onrender.com/users/updatescore",
+        "https://embarrassed-bee-belt.cyclic.app/users/updatescore",
         {
           headers: {
             Authorization: `Bearer ${user.token}`,

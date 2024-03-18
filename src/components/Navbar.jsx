@@ -40,7 +40,7 @@ function Navbar() {
       localStorage.removeItem("user");
       dispatch(logoutUser());
       navigate("/login");
-      const response = await axios.post("https://exploding-kitten-1-fs5m.onrender.com/users/logout");
+      const response = await axios.post("https://embarrassed-bee-belt.cyclic.app/users/logout");
       console.log(response.data);
     } catch (error) {
       console.error("Logout failed:", error.message);

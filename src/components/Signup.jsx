@@ -1,17 +1,23 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setLoading } from "../redux/slices/userSlice";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./authStyle.css";
+
+
+import Spinner from "./Spinner"; 
 
 function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const isLoading = useSelector((state) => state.user.isLoading); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    dispatch(setLoading(true)); 
     try {
       const response = await axios.post("https://exploding-kitten-1-fs5m.onrender.com/users/signup", {
         email,
@@ -20,6 +26,8 @@ function Signup() {
       navigate("/login");
     } catch (error) {
       console.error("Signup failed:", error.message);
+    } finally {
+      dispatch(setLoading(false)); 
     }
   };
 
@@ -53,6 +61,7 @@ function Signup() {
         <button onClick={() => navigate("/login")}>
           Already a user? Login
         </button>
+        {isLoading && <Spinner />} 
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ const initialState = {
   user: null,
   highscores: [],
   isScoreUpdated: true,
+  isLoading: false, // Add loading state
 };
 
 export const fetchHighscore = createAsyncThunk(
@@ -54,17 +55,34 @@ const userSlice = createSlice({
     logoutUser: (state) => {
       state.user = null;
     },
+    setLoading: (state, action) => { 
+      state.isLoading = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
+      .addCase(fetchHighscore.pending, (state) => { 
+        state.isLoading = true;
+      })
       .addCase(fetchHighscore.fulfilled, (state, action) => {
         state.highscores = action.payload;
+        state.isLoading = false;
+      })
+      .addCase(fetchHighscore.rejected, (state) => { 
+        state.isLoading = false;
+      })
+      .addCase(updateScore.pending, (state) => {
+        state.isLoading = true;
       })
       .addCase(updateScore.fulfilled, (state, action) => {
         state.isScoreUpdated = true;
+        state.isLoading = false;
+      })
+      .addCase(updateScore.rejected, (state) => { 
+        state.isLoading = false;
       });
   },
 });
 
-export const { setUser, logoutUser } = userSlice.actions;
+export const { setUser, logoutUser, setLoading } = userSlice.actions;
 export default userSlice.reducer;
